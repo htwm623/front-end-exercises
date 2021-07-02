@@ -1,6 +1,4 @@
-*,
-*:before,
-*:after {
+*, *:before, *:after {
   box-sizing: border-box;
 }
 
@@ -76,7 +74,7 @@ nav ul {
   top: 0;
   right: 0;
   width: 66%;
-  background-color: #363b4e;
+  background-color: #363B4E;
   height: 100vh;
   z-index: 2;
   padding: 2em 0;
@@ -88,14 +86,13 @@ nav ul li a {
   color: white;
   display: block;
   padding: .4em 1.5em;
-  font-size: 1.5rem;
+  font-size: 1.5rem;;
   text-align: right;
 }
 
 .exit-btn {
   text-align: right;
 }
-
 
 .exit-btn img {
   width: 2em;
@@ -127,10 +124,10 @@ h1 {
   width: 65%;
 }
 
-.blur,
-.drone {
+.blur, .drone {
   position: absolute;
   left: 0;
+  z-index: 1;
 }
 
 .blur {
@@ -145,17 +142,18 @@ h1 {
 
 @keyframes hover {
   from {
-    transform: translateY(-30px);
+      transform: translateY(-30px);
   }
 }
 
 @keyframes pulse {
   from {
-    opacity: 0;
+      opacity: 0;
   }
 }
 
-/* section 1 */
+/* Section 1 */
+
 .quote {
   width: 90%;
   background-color: #303853;
@@ -166,7 +164,7 @@ h1 {
   height: 75vh;
 }
 
-.quote::before {
+.quote:before {
   content: '';
   position: absolute;
   top: 0;
@@ -187,7 +185,7 @@ cite {
   padding-left: 1.5em;
 }
 
-cite::before {
+cite:before {
   content: '';
   position: absolute;
   width: 1em;
@@ -196,7 +194,7 @@ cite::before {
   top: 50%;
 }
 
-/* section 2 */
+/* Section 2 */
 
 .gallery {
   display: block;
@@ -206,7 +204,7 @@ cite::before {
 }
 
 h2 {
-  font-size: 2.5em;
+  font-size: 2.5rem;
   margin-bottom: 0;
   font-weight: normal;
 }
@@ -217,10 +215,10 @@ h2 {
 
 .gallery-container {
   display: grid;
-  grid-template-areas: 
-    ". a b"
-    "c d ."
-    ". e .";
+  grid-template-areas:
+      ". a b"
+      "c d ."
+      ". e .";
   margin-top: 2em;
 }
 
@@ -231,6 +229,7 @@ h2 {
   aspect-ratio: 1 / 1;
   cursor: pointer;
 }
+
 .gallery-container img:nth-of-type(1) {
   grid-area: a;
 }
@@ -241,23 +240,23 @@ h2 {
   grid-area: c;
 }
 .gallery-container img:nth-of-type(4) {
-  grid-area: d
-  ;
+  grid-area: d;
 }
 .gallery-container img:nth-of-type(5) {
   grid-area: e;
 }
 
-/* section 3 */
+/* Section 3 */
 
 .contact {
-  background: #b2dd9e;
+  background: #B2DD9E;
 }
 
 h3 {
   padding: 1em 1em 1em 10%;
   font-size: 2rem;
-  background-color: rgba(0, 0, 0, .1);
+  /* background-color: #9FC88C; */
+  background-color: rgba(0,0,0,.1);
   display: inline-block;
   margin: 0;
   font-weight: normal;
@@ -266,19 +265,20 @@ h3 {
 .cols-2 {
   width: 90%;
   margin: 2em 2em 2em 10%;
-  padding-left: 2em;
+  padding-right: 2em;
   padding-bottom: 2em;
 }
 
 label {
   display: block;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   margin-bottom: .5em;
 }
 
 input {
   width: 100%;
   border: none;
+  padding: 1em;
   margin-bottom: 2em;
 }
 
@@ -301,7 +301,7 @@ button {
 
 .other-info ul li {
   padding: .5em;
-  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  border-bottom: 1px solid rgba(0,0,0,.2);
   display: block;
   border-radius: .2em;
   font-family: 'Montserrat';
@@ -310,4 +310,112 @@ button {
 
 .other-info a {
   color: black;
+}
+
+@media only screen and (min-width: 900px) {
+  html {
+      font-size: 20px;
+  }
+  
+  .top-bg-container {
+      width: 80%;
+      grid-template-columns: 60% auto;
+  }
+  
+  .container {
+      width: 80%;
+      margin: 0 auto;
+  }
+  
+  .content {
+      display: flex;
+      text-align: left;
+      padding: 0;
+      margin-left: 0;
+      margin-right: 0;
+  }
+  
+  h1 {
+      font-size: 5rem;
+      width: 80%;
+  }
+  
+  .type p {
+      width: 80%;
+  }
+  
+  /* Nav */
+  
+  .menu-btn, .exit-btn {
+      display: none;
+  }
+  
+  nav ul {
+      transform: translateX(0);
+      width: unset;
+      background: none;
+      display: flex;
+      padding-top: 1em;
+      padding-bottom: 0;
+      position: unset;
+      height: auto;
+  }
+  
+  nav ul li a {
+      font-size: 1rem;
+      padding: 0 1em;
+  }
+
+  /* section 1 */
+
+  .quote {
+    width: 80%;
+    display: grid;
+    place-content: center;
+  }
+
+  blockquote, cite {
+    width: 50%;
+    justify-self: center;
+  }
+
+  blockquote {
+    font-size: 2rem;
+  }
+
+  /* section 2 */
+  .gallery {
+    display: flex;
+    gap: 4em;
+  }
+
+  .gallery-container {
+    margin-top: -5em;
+    z-index: 1;
+  }
+
+  h2 {
+    font-size: 4rem;
+    font-weight: normal;
+    line-height: 91.6%;
+  }
+
+  /* contact section */
+
+  .cols-2 {
+    display: flex;
+    gap: 3em;
+  }
+
+  .form-container, .other-info {
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+  .other-info {
+    margin-top: 2em;
+  }
+
+  input {
+    padding: 1.5em;
+  }
 }
